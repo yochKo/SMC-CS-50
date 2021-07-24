@@ -1,0 +1,52 @@
+#include<stdio.h>
+
+int triples(int n);
+
+int main()
+{
+int in = 0, out = 0;
+printf("enter\n");
+scanf_s("%d", &in);
+
+/* The sum of triples of n is 13 + ...(n-2)3 + (n-1)3 + ... + n3  for n>=1
+
+so, n should bigger than 0*/
+if (in < 1) {
+printf("please enter the number bigger than 0\n");
+scanf_s("%d", &in);
+}
+out = triples(in);
+printf("The result is %d\n", out);
+getch();
+return 0;
+}
+
+int triples(int n)
+{
+int i, value = 0;
+for (i = 1; i <= n; i++) {
+value += (i * i * i);
+}
+return value;
+}
+
+int category(int y)
+{
+
+switch (y) {
+case 1:
+case 2:
+case 3:
+case 4:
+return 1;
+case 5:
+case 6:
+case 7:
+case 8:
+case 9:
+return 2;
+default:
+return 0;
+
+}
+}
